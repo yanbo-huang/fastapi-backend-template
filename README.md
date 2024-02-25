@@ -11,6 +11,7 @@ Cookiecutter template for building a FastAPI backend project including only the 
 - `Alembic`: schema migration
 - `Pydantic`: data modeling and validation
 - `Poetry`: dependency management
+- `Black, Ruff, ...`: linting tools
 - `dot env`: variable management
 - `Docker`: containerization
 - `Docker Compose`: orchestration
