@@ -1,8 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, Depends
 
 from src.schemas.posts import PostCreate
+from src.security import validate_token
 
-router = APIRouter()
+router = APIRouter(dependencies=[Depends(validate_token)])
 
 
 @router.get("/")
