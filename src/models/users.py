@@ -10,6 +10,6 @@ class User(Base):
     id = Column(Integer, primary_key=True)
     username = Column(String(255))
     email = Column(String(255), unique=True, index=True)
-    hashed_password = Column(String(55))
+    hashed_password = Column(String(255))
 
     blogs = relationship("Blog", back_populates="owner")
