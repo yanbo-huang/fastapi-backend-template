@@ -6,6 +6,8 @@ class Settings(BaseSettings):
     ALGORITHM: str
     ACCESS_TOKEN_EXPIRE_MINUTES: int
 
+    SQLALCHEMY_DATABASE_URL: str = "postgresql://admin:test@localhost/postgres"
+
     model_config = SettingsConfigDict(
         case_sensitive=True, env_file=".env", extra="ignore"
     )

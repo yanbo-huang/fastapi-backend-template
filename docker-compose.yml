@@ -1,0 +1,9 @@
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment:
+      - POSTGRES_USER=admin # change me
+      - POSTGRES_PASSWORD=test # change me
+    ports:
+      - "5432:5432"
