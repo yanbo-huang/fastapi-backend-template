@@ -1,11 +1,21 @@
 from pydantic import BaseModel, Field, ConfigDict
 
 from src.models.users import User
+from src.schemas.user import UserBase
 
 
-class Blog(BaseModel):
+class BlogCreate(BaseModel):
     title: str = Field(max_length=55)
     content: str = Field(max_length=280)
-    own: User
+
+
+class BlogDTO(BlogCreate):
+    owner: UserBase
+
+    model_config = ConfigDict(from_attributes=True)
+
+
+class BlogInDB(BlogCreate):
+    owner_id: int
 
     model_config = ConfigDict(from_attributes=True)
