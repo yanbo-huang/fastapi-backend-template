@@ -12,7 +12,7 @@ Cookiecutter template for building a FastAPI backend project including only the 
 - `Pydantic`: data modeling and validation
 - `Poetry`: dependency management
 - `Black, Ruff, ...`: linting tools
-- `dot env`: variable management
+- `dotenv, Pydantic-settings`: configuration management
 - `Docker`: containerization
 - `Docker Compose`: orchestration
 
