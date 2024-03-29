@@ -6,7 +6,7 @@ from fastapi.security import OAuth2PasswordRequestForm
 
 from src import crud
 from src.configurations import settings
-from src.database import DBSession
+from src.database.dependencies import DBSession
 from src.schemas.token import Token
 from src.security import create_access_token
 

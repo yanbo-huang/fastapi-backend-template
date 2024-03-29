@@ -15,3 +15,29 @@ Cookiecutter template for building a FastAPI backend project including only the 
 - `dot env`: variable management
 - `Docker`: containerization
 - `Docker Compose`: orchestration
+
+### How to run?
+
+#### create configurations
+
+> change your secrets
+```shell
+cp local.env .env
+```
+
+#### start Postgres database
+```shell
+docker-compose up --build db
+```
+
+#### run DB migration
+```shell
+alembic upgrade head
+```
+
+
+#### run the app
+```shell
+uvicorn src.main:app --reload
+```
+

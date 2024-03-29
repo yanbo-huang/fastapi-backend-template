@@ -2,7 +2,7 @@ from fastapi.encoders import jsonable_encoder
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from src import Blog, User
+from src.database import User, Blog
 from src.schemas.blogs import BlogInDB
 from src.schemas.user import UserInput
 from src.security import get_password_hash, verify_password

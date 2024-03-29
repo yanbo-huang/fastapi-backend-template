@@ -2,10 +2,10 @@ from fastapi import APIRouter, Depends
 from sqlalchemy import select
 
 from src import crud
-from src.database import DBSession
-from src.models.users import User
+from src.database.dependencies import DBSession
+from src.database.models.users import User
 from src.schemas.user import UserInput, UserBase
-from src.security import get_password_hash, validate_token
+from src.security import validate_token
 
 router = APIRouter()
 
