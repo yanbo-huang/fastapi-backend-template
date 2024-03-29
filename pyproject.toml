@@ -21,6 +21,7 @@ black = "^24.2.0"
 ruff = "^0.2.2"
 isort = "^5.13.2"
 pytest = "^8.0.2"
+sqlalchemy-stubs = "^0.4"
 
 [build-system]
 requires = ["poetry-core"]

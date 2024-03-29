@@ -4,20 +4,20 @@ from typing import Annotated
 from fastapi import APIRouter, Depends, status, HTTPException
 from fastapi.security import OAuth2PasswordRequestForm
 
+from src import crud
 from src.configurations import settings
 from src.database import DBSession
 from src.schemas.token import Token
-from src.security import create_access_token, authenticate_user
+from src.security import create_access_token
 
 router = APIRouter()
 
 
 @router.post("/")
 async def login_for_access_token(
-    form_data: Annotated[OAuth2PasswordRequestForm, Depends()],
-    db_session: DBSession
+    form_data: Annotated[OAuth2PasswordRequestForm, Depends()], db_session: DBSession
 ) -> Token:
-    user = authenticate_user(db_session, form_data.username, form_data.password)
+    user = crud.authenticate_user(db_session, form_data.username, form_data.password)
     if not user:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,

@@ -24,7 +24,9 @@ def validate_token(token: Annotated[str, Depends(oauth2_scheme)]) -> TokenData:
         headers={"WWW-Authenticate": "Bearer"},
     )
     try:
-        payload = jwt.decode(token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM])
+        payload = jwt.decode(
+            token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
+        )
         username: str = payload.get("sub")
         exp = payload.get("exp")
         if username is None or exp is None:
@@ -34,7 +36,9 @@ def validate_token(token: Annotated[str, Depends(oauth2_scheme)]) -> TokenData:
         raise credentials_exception
 
 
-def get_current_user(db_session: DBSession, valid_token: TokenData = Depends(validate_token)) -> User:
+def get_current_user(
+    db_session: DBSession, valid_token: TokenData = Depends(validate_token)
+) -> User:
     user = db_session.query(User).filter(User.username == valid_token.user_name).one()
 
     return user
@@ -59,12 +63,3 @@ def create_access_token(data: dict, expires_delta: timedelta | None = None):
         to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM
     )
     return encoded_jwt
-
-
-def authenticate_user(db_session: Session, username: str, password: str):
-    user = db_session.query(User).filter(User.username == username).one_or_none()
-    if not user:
-        return False
-    if not verify_password(password, user.hashed_password):
-        return False
-    return user

@@ -1,6 +1,5 @@
 from pydantic import BaseModel, Field, ConfigDict
 
-from src.models.users import User
 from src.schemas.user import UserBase
 
 
