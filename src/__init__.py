@@ -1,1 +1,1 @@
-from src.crud import crud
+from src.crud import crud # noqa: F401
