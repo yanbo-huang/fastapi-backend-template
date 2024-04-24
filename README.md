@@ -5,6 +5,7 @@ Cookiecutter template for building a FastAPI backend project including only the 
 ### What are the essential components in this template?
 
 - `FastAPI`: REST API
+
 - `JWT`: authentication
 - `Postgresql`: relational database
 - `SQLAlchemy`: ORM
