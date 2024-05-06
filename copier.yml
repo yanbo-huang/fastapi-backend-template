@@ -11,5 +11,5 @@ project_name:
 
 
 _exclude:
-  - copier.yaml
+  - copier.yml
   - README.md
