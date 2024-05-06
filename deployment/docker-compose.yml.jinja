@@ -3,8 +3,8 @@ services:
     image: postgres:latest
     restart: always
     environment:
-      - POSTGRES_USER=admin # change me
-      - POSTGRES_PASSWORD=test # change me
+      - POSTGRES_USER={{ db_user_name }} # change me
+      - POSTGRES_PASSWORD={{ db_password }} # change me
     ports:
       - "5432:5432"
     container_name: db
@@ -16,7 +16,7 @@ services:
     # run db migration and start the API
     command: bash -c "alembic upgrade head && uvicorn src.main:app --host 0.0.0.0 --port 8080"
     environment:
-      - SQLALCHEMY_DATABASE_URL=postgresql://admin:test@db/postgres
+      - SQLALCHEMY_DATABASE_URL=postgresql://{{ db_user_name }}:{{ db_password }}@db/postgres
     ports:
       - "8080:8080"
     depends_on:
