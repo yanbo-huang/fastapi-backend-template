@@ -1,12 +1,19 @@
 # questions
 project_name:
-    type: str # Any value will be treated raw as a string
+    type: str
     help: What is your project name?
-    default: paradox-specifier
     validator: >-
         {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
         project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
         {% endif %}
+
+db_user_name:
+    type: str
+    help: What would be your first database user name?
+
+db_password:
+    type: str
+    help: What would be your first database user's password?
         
 
 
