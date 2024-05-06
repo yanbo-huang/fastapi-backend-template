@@ -12,4 +12,9 @@ project_name:
 
 _exclude:
   - copier.yml
+  - .git
+  - .idea
+  - .vscode
+  - __pycache__
+  - .coverage
   - README.md
