@@ -16,7 +16,7 @@ services:
     # run db migration and start the API
     command: bash -c "alembic upgrade head && uvicorn src.main:app --host 0.0.0.0 --port 8080"
     environment:
-      - SQLALCHEMY_DATABASE_URL=postgresql://{{ db_user_name }}:{{ db_password }}@db/postgres
+      - DATABASE_URI=postgresql://{{ db_user_name }}:{{ db_password }}@db/postgres  # change me
     ports:
       - "8080:8080"
     depends_on:
