@@ -29,7 +29,7 @@ target_metadata = Base.metadata
 # ... etc.
 
 # set your db connection string
-config.set_main_option("sqlalchemy.url", settings.SQLALCHEMY_DATABASE_URL)
+config.set_main_option("sqlalchemy.url", settings.DATABASE_URI)
 
 
 def run_migrations_offline() -> None:
