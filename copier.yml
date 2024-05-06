@@ -1,4 +1,9 @@
 # questions
 project_name:
-    type: str
+    type: str # Any value will be treated raw as a string
     help: What is your project name?
+    default: paradox-specifier
+    validator: >-
+        {% if not (project_name | regex_search('^[a-z][a-z0-9\-]+$')) %}
+        project_name must start with a letter, followed one or more letters, digits or dashes all lowercase.
+        {% endif %}

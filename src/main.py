@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 
-from src.routers import blogs, users, token
+from src.routers import blogs, token, users
 
 app = FastAPI()
 

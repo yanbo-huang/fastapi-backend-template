@@ -4,7 +4,7 @@ from sqlalchemy import select
 from src import crud
 from src.database.dependencies import DBSession
 from src.database.models.users import User
-from src.schemas.user import UserInput, UserBase
+from src.schemas.user import UserBase, UserInput
 from src.security import validate_token
 
 router = APIRouter()

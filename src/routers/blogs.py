@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends
 from src import crud
 from src.database import User
 from src.database.dependencies import DBSession
-from src.schemas.blogs import BlogDTO, BlogCreate, BlogInDB
+from src.schemas.blogs import BlogCreate, BlogDTO, BlogInDB
 from src.security import get_current_user
 
 router = APIRouter()
