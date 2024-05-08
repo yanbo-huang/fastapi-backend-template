@@ -3,7 +3,8 @@ from fastapi import FastAPI
 from src.routers import blogs, token, users
 
 app = FastAPI(
-    title="{{ project_name }}"
+    title="{{ project_name }}",
+    description="{{ project_description }}"
 )
 
 app.include_router(blogs.router, prefix="/blogs", tags=["blogs"])
