@@ -34,6 +34,7 @@ _exclude:
   - __pycache__
   - .coverage
   - README.md
+  - load_dotenv.py
 
 
 _tasks:
