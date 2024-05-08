@@ -1,6 +1,6 @@
 # fastapi-backend-template 
 
-A template generator to help you create a FastAPI backend project faster, which includes only the essential/minimal components.
+This is a template generator based on Copier to help you quicly create a FastAPI backend project, which includes only the essential/minimal components.
 
 Creating a "hello world" Fastapi application is fairly easy. But for people who want to have a proper web backend setup, there are so many configurations, micro decisions, back-and-forth debugging to just make everything running.
 For example, it could easily cost you few hours to setup your ORM `SQLAlchemy` and schema migration tool `Alembic` to make it fully work. The goal of this template generator is to save your time from all those boilerplates, then you can focus on implementing the really business logics
