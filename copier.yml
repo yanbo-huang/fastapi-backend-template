@@ -41,7 +41,6 @@ _exclude:
   - .vscode
   - __pycache__
   - .coverage
-  - README.md
 
 
 _tasks:
