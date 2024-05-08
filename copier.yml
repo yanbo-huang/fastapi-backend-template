@@ -19,10 +19,18 @@ include_precommit:
 db_user_name:
     type: str
     help: What would be your first database user name?
+    validator: >-
+      {% if not (db_user_name | regex_search('^[a-z][a-z0-9]+$')) %}
+      db_user_name must start with a letter, followed one or more letters, digits all lowercase.
+      {% endif %}
 
 db_password:
     type: str
     help: What would be your first database user's password?
+    validator: >-
+      {% if not (db_password | regex_search('^[a-z][a-z0-9]+$')) %}
+      db_password must start with a letter, followed one or more letters, digits all lowercase.
+      {% endif %}
 
 
 
