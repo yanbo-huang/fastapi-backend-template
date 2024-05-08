@@ -45,3 +45,4 @@ _exclude:
 
 _tasks:
   - "python load_dotenv.py"
+  - "rm load_dotenv.py"
